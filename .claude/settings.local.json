@@ -9,7 +9,9 @@
       "Read(C:\\Users\\ajpat\\Downloads/**)",
       "Read(C:\\Users\\ajpat\\Downloads/**)",
       "Read(C:\\Users\\ajpat\\Downloads/**)",
-      "Read(C:\\Users\\ajpat\\Downloads/**)"
+      "Read(C:\\Users\\ajpat\\Downloads/**)",
+      "Bash(node:*)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []
