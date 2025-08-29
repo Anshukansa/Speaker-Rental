@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Rent premium JBL PartyBox 710 & Vonyx 1000W speakers in Clayton VIC. Same-day pickup available. Professional sound equipment for events, parties & celebrations. Call +61 435 341 103" />
   <meta name="keywords" content="speaker rental Clayton, JBL PartyBox rental Melbourne, professional speakers hire VIC, party speakers Clayton, event sound equipment, wireless microphone rental" />
-  <meta name="author" content="Clayton Speaker Rental" />
+  <meta name="author" content="Speaker Rental - Clayton" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   
   <!-- Open Graph / Facebook -->
@@ -21,7 +21,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://claytonSpeakerrental.com.au",
-    "name": "Clayton Speaker Rental",
+    "name": "Speaker Rental - Clayton",
     "image": "https://claytonSpeakerrental.com.au/images/business-logo.jpg",
     "url": "https://claytonSpeakerrental.com.au",
     "telephone": "+61435341103",
@@ -56,6 +56,7 @@
   
   <title>Speaker Rental Clayton VIC | JBL PartyBox 710 & Vonyx 1000W | Same Day Pickup</title>
   <link rel="canonical" href="https://claytonSpeakerrental.com.au" />
+  <link rel="icon" type="image/png" href="images/speaker-emoji.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
@@ -69,7 +70,7 @@
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="#" class="logo"><img src="images/speaker-emoji.png" alt="Speaker" width="24" height="24" style="vertical-align: middle; margin-right: 0.5rem;"> Clayton Speaker Rental</a>
+        <a href="#" class="logo">Speaker Rental - Clayton</a>
         <div class="header-cta">
           <a href="sms:+61435341103?body=Hi, I'm interested in renting a speaker for my event. What's available?" class="header-text">
             TEXT NOW
@@ -475,7 +476,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-business">
-          <h4>Clayton Speaker Rental</h4>
+          <h4>Speaker Rental - Clayton</h4>
           <p>Professional speaker rental service in Clayton VIC</p>
           <p>Clayton, VIC 3168</p>
         </div>
@@ -486,7 +487,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 Clayton Speaker Rental. All rights reserved.</p>
+        <p>&copy; 2024 Speaker Rental - Clayton. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -521,6 +522,7 @@
     // Handle scroll effects
     const handleScroll = throttle(() => {
       const scrollButton = document.querySelector('.scroll-to-top');
+      const header = document.querySelector('.header');
       
       // Scroll button visibility
       if (scrollButton) {
@@ -530,34 +532,39 @@
           scrollButton.style.display = 'none';
         }
       }
-    }, 100);
-
-    // Header background detection
-    const headerObserver = new IntersectionObserver((entries) => {
-      const header = document.querySelector('.header');
-      if (!header) return;
-
-      let isOverLightSection = false;
       
-      entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-          const sectionClass = entry.target.className;
-          // Light sections: social-proof, equipment
-          if (sectionClass.includes('social-proof') || sectionClass.includes('equipment')) {
-            isOverLightSection = true;
+      // Simple header color detection
+      if (header) {
+        const scrollY = window.pageYOffset;
+        const socialProofSection = document.querySelector('.social-proof');
+        const equipmentSection = document.querySelector('.equipment');
+        
+        let isOverLight = false;
+        
+        if (socialProofSection) {
+          const socialTop = socialProofSection.offsetTop;
+          const socialBottom = socialTop + socialProofSection.offsetHeight;
+          if (scrollY >= socialTop - 100 && scrollY <= socialBottom - 100) {
+            isOverLight = true;
           }
         }
-      });
-
-      if (isOverLightSection) {
-        header.classList.add('over-light');
-      } else {
-        header.classList.remove('over-light');
+        
+        if (equipmentSection) {
+          const equipTop = equipmentSection.offsetTop;
+          const equipBottom = equipTop + equipmentSection.offsetHeight;
+          if (scrollY >= equipTop - 100 && scrollY <= equipBottom - 100) {
+            isOverLight = true;
+          }
+        }
+        
+        if (isOverLight) {
+          header.classList.add('over-light');
+        } else {
+          header.classList.remove('over-light');
+        }
       }
-    }, {
-      rootMargin: '-80px 0px -80% 0px',  // Only trigger when section is behind header
-      threshold: [0, 0.5, 1]
-    });
+    }, 100);
+
 
     window.addEventListener('scroll', handleScroll);
 
@@ -586,11 +593,6 @@
         observer.observe(el);
       });
 
-      // Initialize header background observer
-      const sections = document.querySelectorAll('.hero, .social-proof, .equipment, .final-cta, .footer');
-      sections.forEach(section => {
-        headerObserver.observe(section);
-      });
 
       // Basic click tracking
       document.querySelectorAll('a[href^="tel:"], a[href^="sms:"], a[href^="mailto:"]').forEach(link => {
