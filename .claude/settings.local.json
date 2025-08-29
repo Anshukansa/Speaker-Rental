@@ -3,7 +3,12 @@
     "allow": [
       "WebFetch(domain:cdn.jsdelivr.net)",
       "Bash(curl:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Read(C:\\Users\\ajpat\\Downloads/**)",
+      "Read(C:\\Users\\ajpat\\Downloads/**)",
+      "Read(C:\\Users\\ajpat\\Downloads/**)",
+      "Read(C:\\Users\\ajpat\\Downloads/**)",
+      "Read(C:\\Users\\ajpat\\Downloads/**)"
     ],
     "deny": [],
     "ask": []

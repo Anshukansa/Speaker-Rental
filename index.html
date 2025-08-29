@@ -59,1569 +59,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   
-  <style>
-    /* CSS Reset & Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      color: #1f2937;
-      background: #fafbfc;
-      overflow-x: hidden;
-    }
-    
-    /* Typography */
-    .display-heading {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.025em;
-    }
-    
-    .heading {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.015em;
-    }
-    
-    /* Container */
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    /* Header - Modern Minimal */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.3);
-      z-index: 1000;
-      padding: 1.25rem 0;
-    }
-    
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 1.375rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-decoration: none;
-    }
-    
-    .header-cta {
-      display: flex;
-      gap: 0.875rem;
-      align-items: center;
-    }
-    
-    .header-phone {
-      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-      color: white;
-      padding: 0.75rem 1.25rem;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.875rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 14px 0 rgba(239, 68, 68, 0.15);
-    }
-    
-    .header-phone:hover {
-      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px 0 rgba(239, 68, 68, 0.25);
-    }
-    
-    .header-text {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: white;
-      padding: 0.75rem 1.25rem;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.875rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.15);
-    }
-    
-    .header-text:hover {
-      background: linear-gradient(135deg, #059669 0%, #047857 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px 0 rgba(16, 185, 129, 0.25);
-    }
-    
-    /* Hero Section - Modern Gradient */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 8rem 0 5rem;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(99, 102, 241, 0.2) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
-    }
-    
-    .hero-content-centered {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-      min-height: 80vh;
-    }
-    
-    .hero-text-centered {
-      max-width: 800px;
-      text-align: center;
-    }
-    
-    .hero-headline {
-      font-size: 4rem;
-      margin-bottom: 1.75rem;
-      color: white;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .hero-subhead {
-      font-size: 1.375rem;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 2.5rem;
-      font-weight: 400;
-      line-height: 1.5;
-    }
-    
-    .problem-statement {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-left: 4px solid #ef4444;
-      padding: 2rem;
-      margin: 2.5rem 0;
-      border-radius: 0 16px 16px 0;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    }
-    
-    .problem-statement h3 {
-      color: #dc2626;
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-    
-    .problem-statement p {
-      color: #374151;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    
-    .hero-features {
-      margin: 2.5rem 0;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 2rem;
-    }
-    
-    .hero-features h3 {
-      color: white;
-      font-size: 1.375rem;
-      margin-bottom: 1.25rem;
-      font-weight: 700;
-    }
-    
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    
-    .check-icon {
-      width: 24px;
-      height: 24px;
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
-    }
-    
-    .check-icon::after {
-      content: '✓';
-      color: white;
-      font-weight: bold;
-      font-size: 13px;
-    }
-    
-    .feature-item p {
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    
-    .urgency-box {
-      background: rgba(251, 146, 60, 0.15);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(251, 146, 60, 0.4);
-      border-radius: 16px;
-      padding: 2rem;
-      margin: 2.5rem 0;
-      position: relative;
-      animation: pulse 3s infinite;
-    }
-    
-    .urgency-box::before {
-      content: '⚠️';
-      position: absolute;
-      top: -16px;
-      left: 1.5rem;
-      background: rgba(251, 146, 60, 0.9);
-      backdrop-filter: blur(10px);
-      padding: 0.5rem 0.75rem;
-      font-size: 1.25rem;
-      border-radius: 8px;
-    }
-    
-    .urgency-box h4 {
-      color: #f97316;
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-    
-    .urgency-box p {
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    
-    .hero-cta {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      margin-top: 3rem;
-    }
-    
-    .btn-primary {
-      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-      color: white;
-      padding: 1.25rem 2.5rem;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.125rem;
-      text-align: center;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(239, 68, 68, 0.25);
-    }
-    
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.6s;
-    }
-    
-    .btn-primary:hover::before {
-      left: 100%;
-    }
-    
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(239, 68, 68, 0.4);
-    }
-    
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      color: white;
-      padding: 1.25rem 2.5rem;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.125rem;
-      text-align: center;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.25);
-      border-color: rgba(255, 255, 255, 0.4);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(255, 255, 255, 0.1);
-    }
-    
-    .hero-image {
-      position: relative;
-      text-align: center;
-    }
-    
-    .hero-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    /* Social Proof Section - Modern Cards */
-    .social-proof {
-      padding: 6rem 0;
-      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-    }
-    
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-    
-    .section-title {
-      font-size: 3rem;
-      color: #111827;
-      margin-bottom: 1.25rem;
-      background: linear-gradient(135deg, #111827 0%, #374151 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .section-subtitle {
-      font-size: 1.25rem;
-      color: #6b7280;
-      font-weight: 400;
-    }
-    
-    .stats-bar {
-      display: flex;
-      justify-content: center;
-      gap: 4rem;
-      margin: 4rem 0;
-      padding: 3rem;
-      background: white;
-      border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(229, 231, 235, 0.5);
-      backdrop-filter: blur(10px);
-    }
-    
-    .stat-item {
-      text-align: center;
-      position: relative;
-    }
-    
-    .stat-item::after {
-      content: '';
-      position: absolute;
-      right: -2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 1px;
-      height: 60px;
-      background: linear-gradient(180deg, transparent 0%, #e5e7eb 50%, transparent 100%);
-    }
-    
-    .stat-item:last-child::after {
-      display: none;
-    }
-    
-    .stat-number {
-      display: block;
-      font-size: 3rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-    
-    .stat-label {
-      font-size: 0.9rem;
-      color: #6b7280;
-      font-weight: 500;
-      line-height: 1.4;
-    }
-    
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin-top: 4rem;
-    }
-    
-    .testimonial {
-      background: white;
-      border: 1px solid rgba(229, 231, 235, 0.3);
-      border-radius: 20px;
-      padding: 2.5rem;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-    }
-    
-    .testimonial::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, transparent 100%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    
-    .testimonial:hover::before {
-      opacity: 1;
-    }
-    
-    .testimonial:hover {
-      border-color: #6366f1;
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(99, 102, 241, 0.15);
-    }
-    
-    .stars {
-      color: #fbbf24;
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      gap: 2px;
-    }
-    
-    .testimonial blockquote {
-      font-style: italic;
-      color: #374151;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-      font-size: 1.05rem;
-      position: relative;
-    }
-    
-    .testimonial cite {
-      font-weight: 600;
-      color: #111827;
-      font-style: normal;
-      font-size: 0.95rem;
-    }
 
-    /* Equipment Section - Modern Product Cards */
-    .equipment {
-      padding: 6rem 0;
-      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-    }
-    
-    .warning-banner {
-      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-      border: 2px solid rgba(245, 158, 11, 0.3);
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 3rem 0 4rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .warning-banner::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f59e0b' fill-opacity='0.1'%3E%3Cpath d='M20 5l15 30H5z'/%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
-    }
-    
-    .warning-banner h4 {
-      color: #92400e;
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-    
-    .warning-banner p {
-      color: #78350f;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    
-    .equipment-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-      margin-top: 4rem;
-      align-items: stretch;
-    }
-    
-    .product-card {
-      background: white;
-      border: 2px solid rgba(229, 231, 235, 0.3);
-      border-radius: 24px;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      backdrop-filter: blur(10px);
-      display: flex;
-      flex-direction: column;
-      min-height: 700px;
-    }
-    
-    .product-card:hover {
-      border-color: #6366f1;
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(99, 102, 241, 0.15);
-    }
-    
-    .product-card.featured {
-      border-color: #ef4444;
-      background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
-      position: relative;
-    }
-    
-    .product-card.featured::before {
-      content: 'MOST POPULAR';
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      z-index: 10;
-      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-    }
-    
-    .product-image {
-      position: relative;
-      padding: 3rem 2rem;
-      text-align: center;
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-      flex-shrink: 0;
-    }
-    
-    .product-image img {
-      max-width: 100%;
-      height: 280px;
-      object-fit: contain;
-      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
-    }
-    
-    .stock-indicator {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 1.5rem;
-      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-    }
-    
-    .stock-indicator.available {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-    }
-    
-    .product-info {
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    
-    .product-info h3 {
-      font-size: 1.75rem;
-      color: #111827;
-      margin-bottom: 1.25rem;
-      font-weight: 700;
-    }
-    
-    .feature-list {
-      margin: 2rem 0;
-      flex-grow: 1;
-      min-height: 140px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-    
-    .feature-list .feature {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-      color: #4b5563;
-      padding: 0.5rem 0;
-    }
-    
-    .feature-icon {
-      flex-shrink: 0;
-    }
-    
-    .feature-spacer {
-      opacity: 0;
-      pointer-events: none;
-    }
-    
-    .btn-icon {
-      margin-right: 0.5rem;
-    }
-    
-    .pricing {
-      margin: 2rem 0;
-      padding: 2rem;
-      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-      border-radius: 16px;
-      border: 1px solid rgba(187, 247, 208, 0.5);
-      flex-shrink: 0;
-    }
-    
-    .comparison-price {
-      font-size: 0.9rem;
-      color: #6b7280;
-      text-decoration: line-through;
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-    
-    .my-price {
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    .price {
-      font-size: 2.5rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .period {
-      font-size: 1.1rem;
-      color: #6b7280;
-      font-weight: 500;
-    }
-    
-    .savings {
-      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-      color: white;
-      padding: 0.5rem 0.75rem;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
-    }
-    
-    .pricing-breakdown-micro {
-      text-align: center;
-    }
-    
-    .standalone-pricing {
-      font-size: 0.9rem;
-      color: #6b7280;
-      margin-bottom: 0.5rem;
-    }
-    
-    .combo-pricing {
-      font-size: 1.1rem;
-      color: #059669;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    
-    .action-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: auto;
-    }
-    
-    .btn-cta {
-      padding: 1.25rem;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 700;
-      text-align: center;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 2px solid transparent;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-    
-    .btn-message {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: white;
-      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
-    }
-    
-    .btn-message:hover {
-      background: linear-gradient(135deg, #059669 0%, #047857 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(16, 185, 129, 0.35);
-    }
-    
-    .btn-call {
-      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-      color: white;
-      box-shadow: 0 8px 25px rgba(239, 68, 68, 0.25);
-    }
-    
-    .btn-call:hover {
-      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(239, 68, 68, 0.35);
-    }
-    
-    /* Package Section - Redesigned */
-    .combo-offer {
-      margin: 5rem 0;
-      text-align: center;
-    }
-    
-    .combo-card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      max-width: 700px;
-      margin: 0 auto;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-      position: relative;
-    }
-    
-    .package-badge {
-      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-      color: white;
-      padding: 1.5rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      font-size: 1.375rem;
-      font-weight: 800;
-    }
-    
-    .star-icon {
-      font-size: 1.5rem;
-      animation: sparkle 2s infinite;
-    }
-    
-    @keyframes sparkle {
-      0%, 100% { transform: scale(1) rotate(0deg); }
-      50% { transform: scale(1.2) rotate(180deg); }
-    }
-    
-    .package-description {
-      padding: 2rem;
-      background: #f8fafc;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    
-    .package-description p {
-      font-size: 1.125rem;
-      color: #4b5563;
-      margin: 0;
-      font-weight: 500;
-    }
-    
-    .pricing-breakdown {
-      padding: 2rem;
-      background: white;
-    }
-    
-    .pricing-breakdown h4 {
-      font-size: 1.125rem;
-      color: #374151;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-    }
-    
-    .pricing-items {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    
-    .pricing-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 0;
-    }
-    
-    .pricing-item .item-name {
-      color: #4b5563;
-      font-size: 1rem;
-    }
-    
-    .pricing-item .item-price {
-      color: #1f2937;
-      font-weight: 600;
-      font-size: 1rem;
-    }
-    
-    .pricing-separator {
-      height: 1px;
-      background: #e5e7eb;
-      margin: 0.5rem 0;
-    }
-    
-    .total-row {
-      border-top: 2px solid #e5e7eb;
-      padding-top: 1rem;
-      margin-top: 0.5rem;
-    }
-    
-    .total-row .item-name {
-      font-weight: 600;
-      color: #1f2937;
-    }
-    
-    .total-row .item-price {
-      font-weight: 700;
-      font-size: 1.125rem;
-      color: #1f2937;
-    }
-    
-    .package-deal {
-      padding: 2rem;
-      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-      border-top: 1px solid #e5e7eb;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    
-    .crossed-price {
-      color: #9ca3af;
-      text-decoration: line-through;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-    
-    .deal-price {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    
-    .price-label {
-      font-size: 1.25rem;
-      color: #374151;
-      font-weight: 600;
-    }
-    
-    .deal-amount {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: #059669;
-    }
-    
-    .savings-badge {
-      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.875rem;
-      font-weight: 700;
-      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-    }
-    
-    .guarantee-section {
-      padding: 2rem;
-      background: white;
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      text-align: left;
-    }
-    
-    .guarantee-icon {
-      font-size: 2rem;
-      flex-shrink: 0;
-      margin-top: 0.25rem;
-    }
-    
-    .guarantee-content h5 {
-      font-size: 1.125rem;
-      color: #1f2937;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-    
-    .guarantee-content p {
-      color: #4b5563;
-      line-height: 1.6;
-      margin: 0;
-    }
-    
-    .package-cta {
-      padding: 2rem;
-      background: #f8fafc;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    .btn-package {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 1.25rem 2rem;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .btn-primary-package {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: white;
-      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
-    }
-    
-    .btn-primary-package:hover {
-      background: linear-gradient(135deg, #059669 0%, #047857 100%);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(16, 185, 129, 0.35);
-    }
-    
-    .btn-secondary-package {
-      background: white;
-      color: #6366f1;
-      border: 2px solid #6366f1;
-      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
-    }
-    
-    .btn-secondary-package:hover {
-      background: #6366f1;
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
-    }
-    
-    .btn-icon {
-      font-size: 1.125rem;
-    }
-
-    /* Final CTA Section - Redesigned */
-    .final-cta {
-      padding: 6rem 0;
-      background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.06) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    
-    .cta-content {
-      max-width: 1000px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .final-cta h2 {
-      font-size: 3rem;
-      margin-bottom: 3rem;
-      color: white;
-      font-weight: 800;
-      text-align: center;
-    }
-    
-    .future-scenarios {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-    
-    .success-scenario {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: all 0.3s ease;
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-    
-    .success-scenario:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
-      transform: translateY(-4px);
-    }
-    
-    .scenario-icon {
-      margin-bottom: 1.5rem;
-      animation: bounce 3s infinite;
-    }
-    
-    .emoji-large {
-      width: 48px;
-      height: 48px;
-    }
-    
-    .emoji-icon {
-      vertical-align: middle;
-      margin-right: 0.5rem;
-    }
-    
-    .scenario-content h4 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 1rem;
-    }
-    
-    .scenario-content p {
-      font-size: 1.075rem;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.9);
-      margin: 0;
-    }
-    
-    .reality-check {
-      background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(220, 38, 38, 0.1) 100%);
-      border: 2px solid rgba(239, 68, 68, 0.3);
-      border-radius: 20px;
-      padding: 2.5rem;
-      margin: 3rem 0;
-      backdrop-filter: blur(10px);
-      text-align: center;
-    }
-    
-    .reality-header h3 {
-      color: #fca5a5;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-    }
-    
-    .reality-check p {
-      font-size: 1.125rem;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.9);
-      margin: 0;
-    }
-    
-    .urgency-section {
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 24px;
-      padding: 3rem 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .urgency-header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    .warning-icon {
-      font-size: 1.75rem;
-      animation: pulse 2s infinite;
-    }
-    
-    .urgency-header h3 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: white;
-      margin: 0;
-    }
-    
-    .urgency-text {
-      font-size: 1.125rem;
-      text-align: center;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 3rem;
-      line-height: 1.6;
-    }
-    
-    .contact-options {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-    
-    .contact-btn {
-      display: block;
-      padding: 2rem;
-      border-radius: 20px;
-      text-decoration: none;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 2px solid transparent;
-    }
-    
-    .primary-contact {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: white;
-      box-shadow: 0 8px 32px rgba(16, 185, 129, 0.25);
-    }
-    
-    .primary-contact:hover {
-      background: linear-gradient(135deg, #059669 0%, #047857 100%);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(16, 185, 129, 0.35);
-    }
-    
-    .secondary-contact {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.2);
-      color: white;
-    }
-    
-    .secondary-contact:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-4px);
-    }
-    
-    .tertiary-contact {
-      background: rgba(255, 255, 255, 0.03);
-      border-color: rgba(255, 255, 255, 0.15);
-      color: rgba(255, 255, 255, 0.8);
-    }
-    
-    .tertiary-contact:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.25);
-      color: white;
-      transform: translateY(-2px);
-    }
-    
-    .contact-method-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .contact-icon {
-      font-size: 1.25rem;
-    }
-    
-    .contact-title {
-      font-size: 1.125rem;
-      font-weight: 700;
-    }
-    
-    .contact-subtitle {
-      font-size: 0.95rem;
-      opacity: 0.8;
-      font-weight: 500;
-    }
-    
-    .pickup-details {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 2.5rem;
-    }
-    
-    .pickup-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      justify-content: center;
-    }
-    
-    .pickup-icon {
-      font-size: 1.5rem;
-    }
-    
-    .pickup-header h4 {
-      font-size: 1.375rem;
-      color: white;
-      font-weight: 700;
-      margin: 0;
-    }
-    
-    .pickup-info-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-    
-    .pickup-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-    }
-    
-    .info-label {
-      font-weight: 600;
-      color: #fbbf24;
-      font-size: 0.95rem;
-    }
-    
-    .info-value {
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    /* Footer - Modern Dark */
-    .footer {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #cbd5e1;
-      padding: 3rem 0;
-      position: relative;
-    }
-    
-    .footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #334155, transparent);
-    }
-    
-    .footer-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      text-align: center;
-    }
-    
-    .footer-business h4,
-    .footer-contact h4 {
-      color: white;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      font-size: 1.125rem;
-    }
-    
-    .footer-business p,
-    .footer-contact p {
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-    
-    .footer a {
-      color: #94a3b8;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    
-    .footer a:hover {
-      color: white;
-    }
-    
-    .footer-bottom {
-      border-top: 1px solid #334155;
-      padding: 1.5rem 0;
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.875rem;
-      opacity: 0.7;
-    }
-    
-    /* Scroll Indicator - Modern */
-    .scroll-indicator {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-      color: white;
-      padding: 1rem;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 1000;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: bounce 3s infinite;
-      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 1rem;
-      }
-      
-      .hero-content-centered {
-        min-height: 70vh;
-        padding: 2rem 0;
-      }
-      
-      .hero-headline {
-        font-size: 2.75rem;
-      }
-      
-      .hero-subhead {
-        font-size: 1.2rem;
-      }
-      
-      .section-title {
-        font-size: 2.25rem;
-      }
-      
-      .stats-bar {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 2rem;
-      }
-      
-      .stat-item::after {
-        display: none;
-      }
-      
-      .equipment-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .future-scenarios {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      
-      .header-cta {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      
-      .package-actions {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-      
-      .my-price {
-        justify-content: center;
-      }
-      
-      .combo-value-stack ul {
-        text-align: left;
-      }
-      
-      .final-cta h2 {
-        font-size: 2.25rem;
-      }
-      
-      .contact-hierarchy h3 {
-        font-size: 1.75rem;
-      }
-      
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      
-      .scroll-indicator {
-        bottom: 1.5rem;
-        right: 1.5rem;
-        padding: 0.75rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .hero-headline {
-        font-size: 2.25rem;
-      }
-      
-      .section-title {
-        font-size: 1.875rem;
-      }
-      
-      .product-card {
-        margin: 0 -0.5rem;
-      }
-      
-      .btn-primary,
-      .btn-secondary {
-        font-size: 1rem;
-        padding: 1rem 2rem;
-      }
-    }
-    
-    /* Enhanced Animations */
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-      100% { transform: scale(1); }
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-12px); }
-      60% { transform: translateY(-6px); }
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
-      50% { box-shadow: 0 0 30px rgba(99, 102, 241, 0.6), 0 0 40px rgba(99, 102, 241, 0.4); }
-    }
-    
-    .fade-in-element {
-      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-    
-    .fade-in-element:nth-child(1) { animation-delay: 0.1s; }
-    .fade-in-element:nth-child(2) { animation-delay: 0.2s; }
-    .fade-in-element:nth-child(3) { animation-delay: 0.3s; }
-    
-    .btn-primary:hover {
-      animation: glow 1.5s ease-in-out infinite alternate;
-    }
-    
-    .urgency-box {
-      animation: pulse 3s infinite, float 6s ease-in-out infinite;
-    }
-    
-    /* Smooth hover transitions */
-    * {
-      transition: color 0.2s ease, background-color 0.2s ease;
-    }
-  </style>
 </head>
 
 <body>
@@ -1629,13 +69,10 @@
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="#" class="logo">🔊 Clayton Speaker Rental</a>
+        <a href="#" class="logo"><img src="images/speaker-emoji.png" alt="Speaker" width="24" height="24" style="vertical-align: middle; margin-right: 0.5rem;"> Clayton Speaker Rental</a>
         <div class="header-cta">
-          <a href="sms:+61435341103?body=Hi, I need a speaker for my event. Can you help?" class="header-text">
+          <a href="sms:+61435341103?body=Hi, I'm interested in renting a speaker for my event. What's available?" class="header-text">
             TEXT NOW
-          </a>
-          <a href="tel:+61435341103" class="header-phone">
-            +61 435 341 103
           </a>
         </div>
       </div>
@@ -1649,16 +86,12 @@
         <div class="hero-content-centered">
           <div class="hero-text-centered">
             <h1 class="hero-headline display-heading">
-              Don't Let Poor Sound Destroy Your Event
+              Don't Let Poor Sound Destroy <span class="highlight-text">Your Event</span>
             </h1>
             <p class="hero-subhead">
               Your event deserves professional sound - not disappointment.
             </p>
 
-            <div class="problem-statement">
-              <h3>Here's the brutal truth:</h3>
-              <p>Every weekend, someone calls too late and their speaker is already booked. They end up with inferior sound that kills their party's energy. Don't be that person.</p>
-            </div>
 
             <div class="hero-features">
               <h3>Be the Host Everyone Remembers</h3>
@@ -1673,18 +106,15 @@
             </div>
 
             <div class="urgency-box">
-              <h4>Please Read: Why You Need to Act Quickly</h4>
-              <p>Because this is a small-scale operation, I only have one of each speaker available. Every weekend, someone calls too late but it's already booked.</p>
+              <h4>Here's the brutal truth:</h4>
+              <p>Every weekend, someone calls too late and their speaker is already booked.</p>
+              <p class="urgency-details">Because this is a small-scale operation, I only have one of each speaker available. First caller gets the speaker. Second caller gets disappointment.</p>
             </div>
 
             <div class="hero-cta">
-              <a href="sms:+61435341103?body=Hi, I need a speaker for my event. What's available this weekend?" class="btn-primary">
+              <a href="sms:+61435341103?body=Hi! I need professional speakers for my event. I saw your website and I'm interested in avoiding disappointment with poor sound quality. What speakers do you have available?" class="btn-primary">
                 <img src="images/message-emoji.png" alt="Message" class="emoji-icon" width="20" height="20" />
-                TEXT FOR INSTANT RESPONSE
-              </a>
-              <a href="tel:+61435341103" class="btn-secondary">
-                <img src="images/phone-emoji.png" alt="Phone" class="emoji-icon" width="20" height="20" />
-                CALL NOW - CHECK AVAILABILITY
+                RESERVE YOUR SPOT NOW
               </a>
             </div>
           </div>
@@ -1752,8 +182,8 @@
         </div>
 
         <div class="warning-banner">
-          <h4>⚠️ Don't wait until the last minute</h4>
-          <p>With only two speakers in my entire inventory, weekend dates go fast. Text me for the quickest availability check.</p>
+          <h4><img src="images/warning-emoji.png" alt="Warning" width="20" height="20" style="vertical-align: middle; margin-right: 0.5rem;"> Don't wait until the last minute</h4>
+          <p>With only two speakers in my entire inventory, <span class="small-highlight">weekend dates go fast.</span></p>
         </div>
 
         <div class="equipment-grid">
@@ -1766,6 +196,9 @@
             <div class="product-info">
               <h3 class="heading">JBL PartyBox 710</h3>
               <div class="feature-list">
+                <div class="feature feature-spacer">
+                  <span></span>
+                </div>
                 <div class="feature">
                   <img src="images/lightbulb-emoji.png" alt="Lights" class="feature-icon" width="16" height="16" />
                   Music sync lights
@@ -1796,13 +229,9 @@
                 </div>
               </div>
               <div class="action-buttons">
-                <a href="sms:+61435341103?body=Hi, I'm interested in the JBL PartyBox 710 for my event. Is it available?" class="btn-cta btn-message">
-                  <img src="images/message-emoji.png" alt="Message" class="btn-icon" width="18" height="18" />
-                  TEXT TO RESERVE NOW
-                </a>
-                <a href="tel:+61435341103" class="btn-cta btn-call">
-                  <img src="images/phone-emoji.png" alt="Phone" class="btn-icon" width="18" height="18" />
-                  RESERVE THIS SPEAKER NOW
+                <a href="sms:+61435341103?body=Hi! I want the JBL PartyBox 710 for my event. The 800W power and music sync lights look perfect for what I need. Is it available for rental?" class="btn-cta btn-message">
+                  <img src="images/message-emoji.png" alt="Message" class="btn-icon" width="16" height="16" />
+                   RESERVE NOW
                 </a>
               </div>
             </div>
@@ -1847,13 +276,9 @@
                 </div>
               </div>
               <div class="action-buttons">
-                <a href="sms:+61435341103?body=Hi, I'm interested in the Vonyx 1000W professional speaker. Is it available?" class="btn-cta btn-message">
-                  <img src="images/message-emoji.png" alt="Message" class="btn-icon" width="18" height="18" />
-                  TEXT FOR PROFESSIONAL SPEAKER
-                </a>
-                <a href="tel:+61435341103" class="btn-cta btn-call">
-                  <img src="images/phone-emoji.png" alt="Phone" class="btn-icon" width="18" height="18" />
-                  RESERVE PROFESSIONAL SPEAKER
+                <a href="sms:+61435341103?body=Hi! I'm interested in the Vonyx 1000W professional speaker. The dual speaker system and 1000W power sounds ideal for my event. Is it available?" class="btn-cta btn-message">
+                  <img src="images/message-emoji.png" alt="Message" class="btn-icon" width="16" height="16" />
+                  RESERVE NOW
                 </a>
               </div>
             </div>
@@ -1876,31 +301,20 @@
                   <img src="images/wireless-emoji.png" alt="Wireless" class="feature-icon" width="16" height="16" />
                   Wireless
                 </div>
-                <div class="feature feature-spacer">
-                  <span></span>
-                </div>
-                <div class="feature feature-spacer">
-                  <span></span>
-                </div>
-                <div class="feature feature-spacer">
-                  <span></span>
-                </div>
               </div>
               <div class="pricing">
-                <div class="pricing-breakdown-micro">
-                  <div class="standalone-pricing">Standalone: $30/day</div>
-                  <div class="combo-pricing">With JBL PartyBox 710: $20/day</div>
+                <p class="standalone-note">Standalone: $30/day</p>
+                <div class="my-price">
+                  <span class="price">$20</span>
+                  <span class="period">/day</span>
                   <span class="savings">Save $10!</span>
                 </div>
+                <p class="combo-note">With JBL PartyBox 710</p>
               </div>
               <div class="action-buttons">
-                <a href="sms:+61435341103?body=Hi, I'd like to add the JBL wireless microphone to my speaker order." class="btn-cta btn-message">
-                  <img src="images/message-emoji.png" alt="Message" class="btn-icon" width="18" height="18" />
-                  TEXT TO ADD MICROPHONE
-                </a>
-                <a href="tel:+61435341103" class="btn-cta btn-call">
-                  <img src="images/phone-emoji.png" alt="Phone" class="btn-icon" width="18" height="18" />
-                  ADD MICROPHONE TO ORDER
+                <a href="sms:+61435341103?body=Hi! I want to add the JBL wireless microphone (2 mics included) to my speaker rental. Perfect for announcements and speeches at my event." class="btn-cta btn-message">
+                  <img src="images/message-emoji.png" alt="Message" class="btn-icon" width="16" height="16" />
+                  RESERVE NOW
                 </a>
               </div>
             </div>
@@ -1911,14 +325,11 @@
         <div class="combo-offer">
           <div class="combo-card">
             <div class="package-badge">
-              <span class="star-icon">⭐</span>
+              <img src="images/star-emoji.png" alt="Star" width="24" height="24" class="star-icon">
               <span>The "Perfect Event" Package</span>
-              <span class="star-icon">⭐</span>
+              <img src="images/star-emoji.png" alt="Star" width="24" height="24" class="star-icon">
             </div>
             
-            <div class="package-description">
-              <p>Any Speaker + Wireless Microphone + All Cables + Setup Support</p>
-            </div>
 
             <div class="pricing-breakdown">
               <h4>Individual Pricing:</h4>
@@ -1948,25 +359,23 @@
               </div>
             </div>
 
+                        <div class="package-cta">
+              <a href="sms:+61435341103?body=Hi! I want the 'Perfect Event' Package - Speaker + Wireless Microphone + All Cables + Setup Support for $69/day. This sounds like exactly what I need for my event!" class="btn-package btn-primary-package">
+                <span class="btn-icon"><img src="images/message-emoji.png" alt="Message" width="18" height="18"></span>
+                <span> RESERVE COMPLETE PACKAGE</span>
+              </a>
+            </div>
+          
             <div class="guarantee-section">
-              <div class="guarantee-icon">🛡️</div>
+              <div class="guarantee-icon"><img src="images/shield-emoji.png" alt="Shield" width="32" height="32"></div>
               <div class="guarantee-content">
                 <h5>Your Peace of Mind Guarantee:</h5>
                 <p>You'll feel 100% confident before you leave. I'll personally give you a 2-minute walkthrough so you know exactly how to get perfect sound at your event.</p>
               </div>
             </div>
+</div>
 
-            <div class="package-cta">
-              <a href="sms:+61435341103?body=Hi, I'm interested in the Perfect Event Package (Speaker + Microphone + Setup). Is it available?" class="btn-package btn-primary-package">
-                <span class="btn-icon">📱</span>
-                <span>TEXT FOR COMPLETE PACKAGE</span>
-              </a>
-              <a href="tel:+61435341103" class="btn-package btn-secondary-package">
-                <span class="btn-icon">📞</span>
-                <span>GET COMPLETE PACKAGE - CALL NOW</span>
-              </a>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
@@ -1977,101 +386,81 @@
         <div class="cta-content">
           <h2 class="heading">Picture Your Perfect Event</h2>
           
-          <div class="future-scenarios">
-            <div class="scenario success-scenario">
-              <div class="scenario-icon">
-                <img src="images/party-emoji.png" alt="Party" class="emoji-large" />
-              </div>
-              <div class="scenario-content">
-                <h4>It's Saturday night.</h4>
-                <p>Your speakers are pumping crystal-clear sound. Guests are dancing, laughing, having the time of their lives. People are taking videos to post on social media. You're not stressed about technical issues - you're actually enjoying your own party.</p>
-              </div>
-            </div>
-
-            <div class="scenario success-scenario">
-              <div class="scenario-icon">
-                <img src="images/trophy-emoji.png" alt="Trophy" class="emoji-large" />
-              </div>
-              <div class="scenario-content">
-                <h4>Monday morning:</h4>
-                <p>Your friends are still texting about what an amazing event you threw. Colleagues are asking for your "secret" to hosting such great parties. You're already planning your next event because you know you have a reliable sound solution.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="reality-check">
-            <div class="reality-header">
-              <h3>The Alternative?</h3>
-            </div>
-            <p>Leads to a night of stress. It's the path of hoping a tiny Bluetooth speaker is "good enough," of watching guests leave early because the energy is dead, and of the sinking feeling that your party could have been so much more.</p>
-          </div>
-
-          <div class="urgency-section">
-            <div class="urgency-header">
-              <div class="warning-icon">
-                <img src="images/warning-emoji.png" alt="Warning" width="28" height="28" />
-              </div>
-              <h3>Don't Wait - Act Now</h3>
-            </div>
-            <p class="urgency-text">Every Friday, I get multiple calls for Saturday events. First caller gets the speaker. Second caller gets disappointment. Which one will you be?</p>
-
-            <div class="contact-options">
-              <div class="contact-primary">
-                <a href="sms:+61435341103?body=Hi, I need a speaker for my event. What's available and what are your rates?" class="contact-btn primary-contact">
-                  <div class="contact-method-header">
-                    <span class="contact-icon">
-                      <img src="images/message-emoji.png" alt="Message" width="22" height="22" />
-                    </span>
-                    <span class="contact-title">TEXT NOW: +61 435 341 103</span>
+          <div class="cta-two-column">
+            <!-- Left Column -->
+            <div class="cta-left-column">
+              <div class="future-scenarios">
+                <div class="scenario success-scenario">
+                  <div class="scenario-icon">
+                    <img src="images/party-emoji.png" alt="Party" class="emoji-large" />
                   </div>
-                  <span class="contact-subtitle">Best for fast booking - I respond quickly</span>
-                </a>
-              </div>
-
-              <div class="contact-secondary">
-                <a href="tel:+61435341103" class="contact-btn secondary-contact">
-                  <div class="contact-method-header">
-                    <span class="contact-icon">
-                      <img src="images/phone-emoji.png" alt="Phone" width="20" height="20" />
-                    </span>
-                    <span class="contact-title">CALL FOR DETAILS</span>
+                  <div class="scenario-content">
+                    <h4>Saturday Night</h4>
+                    <p>Crystal-clear sound, guests dancing, amazing energy. You're enjoying your own party!</p>
                   </div>
-                  <span class="contact-subtitle">If you prefer to talk it through</span>
-                </a>
-              </div>
-
-              <div class="contact-tertiary">
-                <a href="mailto:anshu@jayveertech.com?subject=Speaker Rental Inquiry - Urgent&body=Hi, I need professional speakers for my event. Please call me to discuss availability and pricing." class="contact-btn tertiary-contact">
-                  <div class="contact-method-header">
-                    <span class="contact-icon">
-                      <img src="images/email-emoji.png" alt="Email" width="20" height="20" />
-                    </span>
-                    <span class="contact-title">EMAIL (RESPONSE WITHIN HOURS)</span>
-                  </div>
-                  <span class="contact-subtitle">If you can't text or call right now</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="pickup-details">
-              <div class="pickup-header">
-                <span class="pickup-icon">
-                  <img src="images/location-emoji.png" alt="Location" width="24" height="24" />
-                </span>
-                <h4>Pickup Details</h4>
-              </div>
-              <div class="pickup-info-grid">
-                <div class="pickup-item">
-                  <span class="info-label">Location:</span>
-                  <span class="info-value">Clayton VIC 3168 (exact address provided after booking)</span>
                 </div>
-                <div class="pickup-item">
-                  <span class="info-label">Hours:</span>
-                  <span class="info-value">7 days a week, 8 AM - 8 PM</span>
+
+                <div class="scenario success-scenario">
+                  <div class="scenario-icon">
+                    <img src="images/trophy-emoji.png" alt="Trophy" class="emoji-large" />
+                  </div>
+                  <div class="scenario-content">
+                    <h4>Monday Morning</h4>
+                    <p>Friends still texting about your amazing event. Everyone asking for your party secret!</p>
+                  </div>
                 </div>
-                <div class="pickup-item">
-                  <span class="info-label">Process:</span>
-                  <span class="info-value">5-minute pickup, test the speaker, load in your car, enjoy your event</span>
+              </div>
+
+              <div class="reality-check">
+                <div class="reality-header">
+                  <h3>The Alternative?</h3>
+                </div>
+                <p>Leads to a night of stress. It's the path of hoping a tiny Bluetooth speaker is "good enough," of watching guests leave early because the energy is dead, and of the sinking feeling that your party could have been so much more.</p>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="cta-right-column">
+              <div class="urgency-section">
+                <div class="urgency-header">
+                  <div class="warning-icon">
+                    <img src="images/warning-emoji.png" alt="Warning" width="28" height="28" />
+                  </div>
+                  <h3>Don't Wait - Act Now</h3>
+                </div>
+                <p class="urgency-text">Every Friday, I get multiple calls for Saturday events. First caller gets the speaker. Second caller gets disappointment. Which one will you be?</p>
+
+                <div class="contact-options">
+                  <div class="contact-primary">
+                    <a href="sms:+61435341103?body=Hi! I need professional speakers for my event urgently. I don't want to risk poor sound quality ruining my event. What do you have available? When can I pick up?" class="contact-btn primary-contact">
+                      <div class="contact-method-header">
+                        <span class="contact-icon">
+                          <img src="images/message-emoji.png" alt="Message" width="22" height="22" />
+                        </span>
+                        <span class="contact-title">RESERVE YOUR SPEAKER NOW</span>
+                      </div>
+                      <span class="contact-subtitle">Text +61 435 341 103 - Instant response guaranteed</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="pickup-details">
+                  <div class="pickup-header">
+                    <span class="pickup-icon">
+                      <img src="images/location-emoji.png" alt="Location" width="24" height="24" />
+                    </span>
+                    <h4>Pickup Details</h4>
+                  </div>
+                  <div class="pickup-info-grid">
+                    <div class="pickup-item">
+                      <span class="info-label">Location:</span>
+                      <span class="info-value">Clayton VIC 3168 (exact address provided after booking)</span>
+                    </div>
+                    <div class="pickup-item">
+                      <span class="info-label">Process:</span>
+                      <span class="info-value">5-minute pickup, test the speaker, load in your car, enjoy your event</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2092,9 +481,8 @@
         </div>
         <div class="footer-contact">
           <h4>Contact Information</h4>
-          <p>📱 <a href="sms:+61435341103?body=Hi, I have a question about speaker rental.">Text: +61 435 341 103</a></p>
-          <p>📞 <a href="tel:+61435341103">+61 435 341 103</a></p>
-          <p>📧 <a href="mailto:anshu@jayveertech.com">anshu@jayveertech.com</a></p>
+          <p><img src="images/message-emoji.png" alt="Message" width="16" height="16" style="vertical-align: middle; margin-right: 0.5rem;"> <a href="sms:+61435341103?body=Hi, I have a question about speaker rental and availability.">Text: +61 435 341 103</a></p>
+          <p><img src="images/email-emoji.png" alt="Email" width="16" height="16" style="vertical-align: middle; margin-right: 0.5rem;"> <a href="mailto:anshu@jayveertech.com">anshu@jayveertech.com</a></p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -2104,8 +492,8 @@
   </footer>
 
   <!-- Scroll to Top Button -->
-  <div class="scroll-indicator" onclick="scrollToTop()" title="Scroll to top">
-    ↑
+  <div class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top">
+    <span>↑</span>
   </div>
 
   <script>
@@ -2130,17 +518,46 @@
       }
     }
 
-    // Simple scroll indicator
+    // Handle scroll effects
     const handleScroll = throttle(() => {
-      const scrollIndicator = document.querySelector('.scroll-indicator');
-      if (scrollIndicator) {
-        if (window.pageYOffset > 300) {
-          scrollIndicator.style.display = 'block';
+      const scrollButton = document.querySelector('.scroll-to-top');
+      
+      // Scroll button visibility
+      if (scrollButton) {
+        if (window.pageYOffset > 400) {
+          scrollButton.style.display = 'flex';
         } else {
-          scrollIndicator.style.display = 'none';
+          scrollButton.style.display = 'none';
         }
       }
     }, 100);
+
+    // Header background detection
+    const headerObserver = new IntersectionObserver((entries) => {
+      const header = document.querySelector('.header');
+      if (!header) return;
+
+      let isOverLightSection = false;
+      
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+          const sectionClass = entry.target.className;
+          // Light sections: social-proof, equipment
+          if (sectionClass.includes('social-proof') || sectionClass.includes('equipment')) {
+            isOverLightSection = true;
+          }
+        }
+      });
+
+      if (isOverLightSection) {
+        header.classList.add('over-light');
+      } else {
+        header.classList.remove('over-light');
+      }
+    }, {
+      rootMargin: '-80px 0px -80% 0px',  // Only trigger when section is behind header
+      threshold: [0, 0.5, 1]
+    });
 
     window.addEventListener('scroll', handleScroll);
 
@@ -2167,6 +584,12 @@
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
+      });
+
+      // Initialize header background observer
+      const sections = document.querySelectorAll('.hero, .social-proof, .equipment, .final-cta, .footer');
+      sections.forEach(section => {
+        headerObserver.observe(section);
       });
 
       // Basic click tracking
@@ -2213,13 +636,8 @@
     });
   </script>
 
+  <script src="script.js"></script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
-  </script>
 </body>
 </html>
