@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html lang="en-AU" itemscope itemtype="http://schema.org/LocalBusiness">
+<html lang="en-AU" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="#1 Speaker Rental in Clayton VIC.  Weddings, parties, corporate events." />
+  <meta name="description" content="#1 Speaker Rental in Clayton VIC. Weddings, parties, corporate events." />
   <meta name="keywords" content="speaker rental Clayton, speaker hire Clayton VIC, JBL PartyBox 710 rental Melbourne, professional speakers hire Victoria, party speakers Clayton, wedding speakers Melbourne, event sound equipment Clayton, wireless microphone rental VIC, audio equipment hire Melbourne, sound system rental Clayton, party equipment hire Melbourne" />
   <meta name="author" content="Speaker Rental - Clayton" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  
+  <!-- Critical Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="preload" href="images/speaker-emoji.png" as="image" />
+  <link rel="preload" href="images/JBL710.png" as="image" />
+  <link rel="preload" href="images/vonyx 1000watt.png" as="image" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Party Speaker Rental In Clayton VIC</title>
+  <link rel="canonical" href="http://speakerrentalclayton.jayveertech.com/" />
+  <link rel="icon" type="image/png" href="images/speaker-emoji.png" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -25,7 +46,7 @@
   <meta name="twitter:description" content="#1 Speaker Rental Clayton VIC 🔊 JBL PartyBox 710 & Vonyx 1000W speakers for hire. Same-day pickup Melbourne." />
   <meta name="twitter:image" content="http://speakerrentalclayton.jayveertech.com/images/JBL710.png" />
   
-  <!-- Additional SEO Meta Tags -->
+  <!-- Geo Meta Tags -->
   <meta name="geo.region" content="AU-VIC" />
   <meta name="geo.placename" content="Clayton, Victoria" />
   <meta name="geo.position" content="-37.9161;145.1164" />
@@ -33,12 +54,16 @@
   <meta name="theme-color" content="#6366f1" />
   <meta name="msapplication-TileColor" content="#6366f1" />
   
+  <!-- Search Engine Verification -->
+  <meta name="google-site-verification" content="TXNIYjZ4o4L0o8TyY0w0Du76JC0AwgzedRcOi2Q2oZc" />
+  <meta name="msvalidate.01" content="D9DF66F919812B0ACD1FBCEE1EA41814" />
+  
   <!-- Local Business Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "http://speakerrentalclayton.jayveertech.com/",
+    "@id": "http://speakerrentalclayton.jayveertech.com/#business",
     "name": "Speaker Rental - Clayton",
     "image": "http://speakerrentalclayton.jayveertech.com/images/speaker-emoji.png",
     "url": "http://speakerrentalclayton.jayveertech.com/",
@@ -67,7 +92,11 @@
     },
     "priceRange": "$49-$69",
     "description": "Professional speaker rental service in Clayton VIC. JBL PartyBox 710, Vonyx 1000W speakers and wireless microphones available for events, parties and celebrations.",
-    "areaServed": [{"@type": "City", "name": "Clayton"}, {"@type": "City", "name": "Melbourne"}, {"@type": "State", "name": "Victoria"}],
+    "areaServed": [
+      {"@type": "City", "name": "Clayton"}, 
+      {"@type": "City", "name": "Melbourne"}, 
+      {"@type": "State", "name": "Victoria"}
+    ],
     "serviceType": "Speaker Rental",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -80,14 +109,22 @@
             "name": "JBL PartyBox 710",
             "description": "800W powerful speaker with music sync lights",
             "image": "http://speakerrentalclayton.jayveertech.com/images/JBL710.png",
+            "brand": {
+              "@type": "Brand",
+              "name": "JBL"
+            },
             "offers": {
               "@type": "Offer",
-              "price": "49",
+              "price": "49.00",
               "priceCurrency": "AUD",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "seller": {
+                "@type": "LocalBusiness",
+                "@id": "http://speakerrentalclayton.jayveertech.com/#business"
+              }
             }
           },
-          "price": "49",
+          "price": "49.00",
           "priceCurrency": "AUD"
         },
         {
@@ -97,28 +134,57 @@
             "name": "Vonyx 1000W Professional",
             "description": "1000W dual speaker system",
             "image": "http://speakerrentalclayton.jayveertech.com/images/vonyx 1000watt.png",
+            "brand": {
+              "@type": "Brand",
+              "name": "Vonyx"
+            },
             "offers": {
               "@type": "Offer",
-              "price": "49",
+              "price": "49.00",
               "priceCurrency": "AUD",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "seller": {
+                "@type": "LocalBusiness",
+                "@id": "http://speakerrentalclayton.jayveertech.com/#business"
+              }
             }
           },
-          "price": "49",
+          "price": "49.00",
           "priceCurrency": "AUD"
         }
       ]
     },
-    "review": {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "4.9",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Customer Reviews"
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "147",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+  </script>
+
+  <!-- Product Schema for JBL PartyBox 710 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "JBL PartyBox 710",
+    "image": "http://speakerrentalclayton.jayveertech.com/images/JBL710.png",
+    "description": "800W powerful speaker with music sync lights for rent in Clayton VIC",
+    "brand": {
+      "@type": "Brand",
+      "name": "JBL"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "49.00",
+      "priceCurrency": "AUD",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Speaker Rental - Clayton",
+        "@id": "http://speakerrentalclayton.jayveertech.com/#business"
       }
     },
     "aggregateRating": {
@@ -128,29 +194,37 @@
     }
   }
   </script>
-  
-  <title>Party Speaker Rental In Clayton VIC</title>
-  <link rel="canonical" href="http://speakerrentalclayton.jayveertech.com/" />
-  <link rel="icon" type="image/png" href="images/speaker-emoji.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
-  <meta name="google-site-verification" content="TXNIYjZ4o4L0o8TyY0w0Du76JC0AwgzedRcOi2Q2oZc" />
-  <meta name="msvalidate.01" content="D9DF66F919812B0ACD1FBCEE1EA41814" />
-  
-  <!-- Preload critical resources for Core Web Vitals -->
-  <link rel="preload" href="styles.css" as="style" />
-  <link rel="preload" href="images/speaker-emoji.png" as="image" />
-  <link rel="preload" href="images/JBL710.png" as="image" />
-  <link rel="preload" href="images/vonyx 1000watt.png" as="image" />
-  
-  <link rel="stylesheet" href="styles.css" />
-  
-  <!-- DNS prefetch for performance -->
-  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-  
 
+  <!-- Product Schema for Vonyx 1000W -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Vonyx 1000W Professional",
+    "image": "http://speakerrentalclayton.jayveertech.com/images/vonyx 1000watt.png",
+    "description": "1000W dual speaker system for rent in Clayton VIC",
+    "brand": {
+      "@type": "Brand",
+      "name": "Vonyx"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "49.00",
+      "priceCurrency": "AUD",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Speaker Rental - Clayton",
+        "@id": "http://speakerrentalclayton.jayveertech.com/#business"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "147"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -180,7 +254,6 @@
             <p class="hero-subhead">
               Your event deserves professional sound - not disappointment.
             </p>
-
 
             <div class="hero-features">
               <h3>Be the Host Everyone Remembers</h3>
@@ -235,29 +308,29 @@
         </div>
 
         <div class="testimonials-grid">
-          <div class="testimonial">
+          <article class="testimonial">
             <div class="stars">★★★★★</div>
             <blockquote>
               "This speaker single-handedly made my 30th birthday. I was worried about creating the right vibe, but the PartyBox 710 was a monster. The bass was so powerful you could feel it in your chest, and the light show turned my backyard into a proper dance floor. I just texted my event date, got an instant reply, and booking was done. So easy."
             </blockquote>
             <cite>Chloe T. - 30th Birthday Bash, Mount Waverley</cite>
-          </div>
+          </article>
 
-          <div class="testimonial">
+          <article class="testimonial">
             <div class="stars">★★★★★</div>
             <blockquote>
               "I was a bit last-minute trying to find a good speaker for our housewarming. I texted on the off chance he had something available and he replied straight away. He suggested the right speaker for the space and it sounded amazing, way better than other rentals I've used that cost more. So glad I found this service."
             </blockquote>
             <cite>Marcus L. - Housewarming Party, Malvern East</cite>
-          </div>
+          </article>
 
-          <div class="testimonial">
+          <article class="testimonial">
             <div class="stars">★★★★★</div>
             <blockquote>
               "The whole rental process was just so easy. I had to move our pickup time last minute, and he was completely fine with it. The speaker he provided was exactly what we needed for the party. Would definitely use this service again."
             </blockquote>
             <cite>David P. - Engagement Party, Chadstone</cite>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -277,13 +350,13 @@
 
         <div class="equipment-grid">
           <!-- JBL PartyBox 710 -->
-          <div class="product-card featured">
+          <article class="product-card featured" itemscope itemtype="https://schema.org/Product">
             <div class="product-image">
-              <img src="images/JBL710.png" alt="JBL PartyBox 710 Professional Speaker Rental Clayton VIC - 800W with Music Sync Lights" loading="lazy" width="280" height="280" />
+              <img src="images/JBL710.png" alt="JBL PartyBox 710 Professional Speaker Rental Clayton VIC - 800W with Music Sync Lights" loading="lazy" width="280" height="280" itemprop="image" />
               <div class="stock-indicator">Only 1 Available</div>
             </div>
             <div class="product-info">
-              <h3 class="heading">JBL PartyBox 710</h3>
+              <h3 class="heading" itemprop="name">JBL PartyBox 710</h3>
               <div class="feature-list">
                 <div class="feature feature-spacer">
                   <span></span>
@@ -309,12 +382,14 @@
                   Not waterproof
                 </div>
               </div>
-              <div class="pricing">
+              <div class="pricing" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                 <span class="comparison-price">Others charge: $85/day</span>
                 <div class="my-price">
-                  <span class="price">$49</span>
+                  <span class="price" itemprop="price" content="49">$49</span>
                   <span class="period">/day</span>
                   <span class="savings">Save $36!</span>
+                  <meta itemprop="priceCurrency" content="AUD">
+                  <meta itemprop="availability" content="https://schema.org/InStock">
                 </div>
               </div>
               <div class="action-buttons">
@@ -324,16 +399,16 @@
                 </a>
               </div>
             </div>
-          </div>
+          </article>
 
           <!-- Vonyx 1000W -->
-          <div class="product-card">
+          <article class="product-card" itemscope itemtype="https://schema.org/Product">
             <div class="product-image">
-              <img src="images/vonyx 1000watt.png" alt="Vonyx 1000W Professional Speaker Hire Melbourne - Dual Speaker System for Events" loading="lazy" width="280" height="280" />
+              <img src="images/vonyx 1000watt.png" alt="Vonyx 1000W Professional Speaker Hire Melbourne - Dual Speaker System for Events" loading="lazy" width="280" height="280" itemprop="image" />
               <div class="stock-indicator">Only 1 Available</div>
             </div>
             <div class="product-info">
-              <h3 class="heading">Vonyx 1000W Professional</h3>
+              <h3 class="heading" itemprop="name">Vonyx 1000W Professional</h3>
               <div class="feature-list">
                 <div class="feature">
                   <img src="images/lightning-emoji.png" alt="1000W High Power Output" class="feature-icon" width="16" height="16" />
@@ -356,12 +431,14 @@
                   Not waterproof
                 </div>
               </div>
-              <div class="pricing">
+              <div class="pricing" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                 <span class="comparison-price">Others charge: $95/day</span>
                 <div class="my-price">
-                  <span class="price">$49</span>
+                  <span class="price" itemprop="price" content="49">$49</span>
                   <span class="period">/day</span>
                   <span class="savings">Save $46!</span>
+                  <meta itemprop="priceCurrency" content="AUD">
+                  <meta itemprop="availability" content="https://schema.org/InStock">
                 </div>
               </div>
               <div class="action-buttons">
@@ -371,16 +448,16 @@
                 </a>
               </div>
             </div>
-          </div>
+          </article>
 
           <!-- Microphone Add-on -->
-          <div class="product-card">
+          <article class="product-card" itemscope itemtype="https://schema.org/Product">
             <div class="product-image">
-              <img src="images/JBL Mic.png" alt="JBL Wireless Microphone Rental Clayton - Professional Wireless Mic for Events and Speeches" loading="lazy" width="280" height="280" />
+              <img src="images/JBL Mic.png" alt="JBL Wireless Microphone Rental Clayton - Professional Wireless Mic for Events and Speeches" loading="lazy" width="280" height="280" itemprop="image" />
               <div class="stock-indicator available">Available</div>
             </div>
             <div class="product-info">
-              <h3 class="heading">JBL Wireless Microphone</h3>
+              <h3 class="heading" itemprop="name">JBL Wireless Microphone</h3>
               <div class="feature-list">
                 <div class="feature">
                   <img src="images/microphone-emoji.png" alt="Professional Wireless Microphone" class="feature-icon" width="16" height="16" />
@@ -391,12 +468,14 @@
                   Wireless
                 </div>
               </div>
-              <div class="pricing">
+              <div class="pricing" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                 <p class="standalone-note">Standalone: $30/day</p>
                 <div class="my-price">
-                  <span class="price">$20</span>
+                  <span class="price" itemprop="price" content="20">$20</span>
                   <span class="period">/day</span>
                   <span class="savings">Save $10!</span>
+                  <meta itemprop="priceCurrency" content="AUD">
+                  <meta itemprop="availability" content="https://schema.org/InStock">
                 </div>
                 <p class="combo-note">With JBL PartyBox 710</p>
               </div>
@@ -407,7 +486,7 @@
                 </a>
               </div>
             </div>
-          </div>
+          </article>
         </div>
 
         <!-- Package Offer -->
@@ -418,7 +497,6 @@
               <span>The "Perfect Event" Package</span>
               <img src="images/star-emoji.png" alt="Star" width="24" height="24" class="star-icon">
             </div>
-            
 
             <div class="pricing-breakdown">
               <h4>Individual Pricing:</h4>
@@ -448,7 +526,7 @@
               </div>
             </div>
 
-                        <div class="package-cta">
+            <div class="package-cta">
               <a href="sms:+61435341103?body=Hi! I want the Perfect Event Package for $69/day. When can I pick it up?" class="btn-package btn-primary-package">
                 <span class="btn-icon"><img src="images/message-emoji.png" alt="Message" width="18" height="18"></span>
                 <span> RESERVE COMPLETE PACKAGE</span>
@@ -462,9 +540,7 @@
                 <p>You'll feel 100% confident before you leave. I'll personally give you a 2-minute walkthrough so you know exactly how to get perfect sound at your event.</p>
               </div>
             </div>
-</div>
-
-
+          </div>
         </div>
       </div>
     </section>
@@ -560,18 +636,22 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer" id="footer">
+  <footer class="footer" id="footer" itemscope itemtype="https://schema.org/LocalBusiness">
     <div class="container">
       <div class="footer-content">
         <div class="footer-business">
-          <h4>Speaker Rental - Clayton</h4>
-          <p>Professional speaker rental service in Clayton VIC</p>
-          <p>Clayton, VIC 3168</p>
+          <h4 itemprop="name">Speaker Rental - Clayton</h4>
+          <p itemprop="description">Professional speaker rental service in Clayton VIC</p>
+          <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Clayton</span>, 
+            <span itemprop="addressRegion">VIC</span> 
+            <span itemprop="postalCode">3168</span>
+          </div>
         </div>
         <div class="footer-contact">
           <h4>Contact Information</h4>
-          <p><img src="images/message-emoji.png" alt="Message" width="16" height="16" style="vertical-align: middle; margin-right: 0.5rem;"> <a href="sms:+61435341103?body=Hi, I have a question about speaker rental.">Text: +61 435 341 103</a></p>
-          <p><img src="images/email-emoji.png" alt="Email" width="16" height="16" style="vertical-align: middle; margin-right: 0.5rem;"> <a href="mailto:anshu@jayveertech.com">anshu@jayveertech.com</a></p>
+          <p><img src="images/message-emoji.png" alt="Message" width="16" height="16" style="vertical-align: middle; margin-right: 0.5rem;"> <a href="sms:+61435341103?body=Hi, I have a question about speaker rental." itemprop="telephone">Text: +61 435 341 103</a></p>
+          <p><img src="images/email-emoji.png" alt="Email" width="16" height="16" style="vertical-align: middle; margin-right: 0.5rem;"> <a href="mailto:anshu@jayveertech.com" itemprop="email">anshu@jayveertech.com</a></p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -581,22 +661,22 @@
   </footer>
 
   <!-- Scroll to Top Button -->
-  <div class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top">
+  <div class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <span>↑</span>
   </div>
 
   <!-- Calendar Popup -->
-  <div id="calendarPopup" class="calendar-popup-overlay">
+  <div id="calendarPopup" class="calendar-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="calendarTitle">
     <div class="calendar-popup">
       <div class="calendar-header">
         <h3 id="calendarTitle">Select Your Event Date</h3>
-        <button class="calendar-close" onclick="closeCalendar()">&times;</button>
+        <button class="calendar-close" onclick="closeCalendar()" aria-label="Close calendar">&times;</button>
       </div>
       <div class="calendar-body">
         <div class="calendar-navigation">
-          <button onclick="previousMonth()">&lt;</button>
+          <button onclick="previousMonth()" aria-label="Previous month">&lt;</button>
           <span id="monthYear"></span>
-          <button onclick="nextMonth()">&gt;</button>
+          <button onclick="nextMonth()" aria-label="Next month">&gt;</button>
         </div>
         <div class="calendar-grid">
           <div class="calendar-weekdays">
@@ -611,281 +691,7 @@
     </div>
   </div>
 
-  <script>
-    // Simple, performance-optimized JavaScript
-    
-    // Smooth scroll to top
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Throttle function for performance
-    function throttle(func, limit) {
-      let inThrottle;
-      return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-          func.apply(context, args);
-          inThrottle = true;
-          setTimeout(() => inThrottle = false, limit);
-        }
-      }
-    }
-
-    // Handle scroll effects
-    const handleScroll = throttle(() => {
-      const scrollButton = document.querySelector('.scroll-to-top');
-      const header = document.querySelector('.header');
-      
-      // Scroll button visibility
-      if (scrollButton) {
-        if (window.pageYOffset > 400) {
-          scrollButton.style.display = 'flex';
-        } else {
-          scrollButton.style.display = 'none';
-        }
-      }
-      
-      // Simple header color detection
-      if (header) {
-        const scrollY = window.pageYOffset;
-        const socialProofSection = document.querySelector('.social-proof');
-        const equipmentSection = document.querySelector('.equipment');
-        
-        let isOverLight = false;
-        
-        if (socialProofSection) {
-          const socialTop = socialProofSection.offsetTop;
-          const socialBottom = socialTop + socialProofSection.offsetHeight;
-          if (scrollY >= socialTop - 100 && scrollY <= socialBottom - 100) {
-            isOverLight = true;
-          }
-        }
-        
-        if (equipmentSection) {
-          const equipTop = equipmentSection.offsetTop;
-          const equipBottom = equipTop + equipmentSection.offsetHeight;
-          if (scrollY >= equipTop - 100 && scrollY <= equipBottom - 100) {
-            isOverLight = true;
-          }
-        }
-        
-        if (isOverLight) {
-          header.classList.add('over-light');
-        } else {
-          header.classList.remove('over-light');
-        }
-      }
-    }, 100);
-
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Simple intersection observer for fade-in effects
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    document.addEventListener('DOMContentLoaded', function() {
-      // Simple fade-in animation setup
-      const animatedElements = document.querySelectorAll('.testimonial, .product-card, .stat-item');
-      animatedElements.forEach((el) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-      });
-
-
-      // Basic click tracking
-      document.querySelectorAll('a[href^="tel:"], a[href^="sms:"], a[href^="mailto:"]').forEach(link => {
-        link.addEventListener('click', function() {
-          const href = this.getAttribute('href');
-          let category;
-          if (href.startsWith('tel:')) {
-            category = 'Phone';
-          } else if (href.startsWith('sms:')) {
-            category = 'SMS';
-          } else if (href.startsWith('mailto:')) {
-            category = 'Email';
-          }
-          
-          // Simple analytics tracking
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'click', {
-              'event_category': category,
-              'event_label': this.textContent.trim()
-            });
-          }
-        });
-      });
-
-      // Simple button hover effects (CSS-based)
-      const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .btn-package');
-      buttons.forEach(button => {
-        button.addEventListener('click', function() {
-          // Simple click feedback
-          this.style.transform = 'scale(0.98)';
-          setTimeout(() => {
-            this.style.transform = '';
-          }, 100);
-        });
-      });
-    });
-
-    // Keyboard accessibility
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        document.activeElement.blur();
-        closeCalendar();
-      }
-    });
-
-    // Calendar functionality
-    let currentCalendarDate = new Date();
-    let selectedProduct = '';
-    
-    const productNames = {
-      'jbl710': 'JBL PartyBox 710',
-      'vonyx1000': 'Vonyx 1000W Professional',
-      'jblmic': 'JBL Wireless Microphone'
-    };
-
-    function openCalendar(productType) {
-      selectedProduct = productType;
-      const popup = document.getElementById('calendarPopup');
-      const title = document.getElementById('calendarTitle');
-      title.textContent = `Select Date for ${productNames[productType]}`;
-      
-      currentCalendarDate = new Date();
-      renderCalendar();
-      popup.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeCalendar() {
-      const popup = document.getElementById('calendarPopup');
-      popup.classList.remove('show');
-      document.body.style.overflow = '';
-    }
-
-    function previousMonth() {
-      const today = new Date();
-      const prevMonth = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth() - 1);
-      
-      // Don't allow going to previous months if it would show past dates
-      if (prevMonth.getMonth() < today.getMonth() && prevMonth.getFullYear() <= today.getFullYear()) {
-        return;
-      }
-      
-      currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
-      renderCalendar();
-    }
-
-    function nextMonth() {
-      const today = new Date();
-      const maxDate = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
-      const nextMonth = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth() + 1);
-      
-      // Don't allow going beyond next month
-      if (nextMonth > maxDate) {
-        return;
-      }
-      
-      currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
-      renderCalendar();
-    }
-
-    function renderCalendar() {
-      const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-                          'July', 'August', 'September', 'October', 'November', 'December'];
-      
-      const monthYear = document.getElementById('monthYear');
-      const calendarDates = document.getElementById('calendarDates');
-      
-      monthYear.textContent = `${monthNames[currentCalendarDate.getMonth()]} ${currentCalendarDate.getFullYear()}`;
-      
-      const firstDay = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth(), 1);
-      const lastDay = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth() + 1, 0);
-      const today = new Date();
-      const maxDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
-      
-      calendarDates.innerHTML = '';
-      
-      // Add empty cells for days before the first day of the month
-      for (let i = 0; i < firstDay.getDay(); i++) {
-        const emptyCell = document.createElement('div');
-        emptyCell.className = 'calendar-date disabled';
-        calendarDates.appendChild(emptyCell);
-      }
-      
-      // Add days of the month
-      for (let day = 1; day <= lastDay.getDate(); day++) {
-        const date = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth(), day);
-        const dateCell = document.createElement('div');
-        dateCell.className = 'calendar-date';
-        dateCell.textContent = day;
-        
-        // Check if date is in the past or beyond 30 days
-        if (date < today || date > maxDate) {
-          dateCell.classList.add('disabled');
-        } else {
-          // Check if it's today
-          if (date.toDateString() === today.toDateString()) {
-            dateCell.classList.add('today');
-          }
-          
-          dateCell.addEventListener('click', function() {
-            selectDate(date);
-          });
-        }
-        
-        calendarDates.appendChild(dateCell);
-      }
-    }
-
-    function selectDate(selectedDate) {
-      const formattedDate = selectedDate.toLocaleDateString('en-AU', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-      
-      const messages = {
-        'jbl710': `Hi! I need the JBL PartyBox 710 for ${formattedDate}. Is it available?`,
-        'vonyx1000': `Hi! I need the Vonyx 1000W speaker for ${formattedDate}. Is it available?`,
-        'jblmic': `Hi! I need the wireless microphone for ${formattedDate}. Is it available?`
-      };
-      
-      const message = messages[selectedProduct];
-      const smsUrl = `sms:+61435341103?body=${encodeURIComponent(message)}`;
-      
-      window.location.href = smsUrl;
-      closeCalendar();
-    }
-
-    // Close calendar when clicking outside
-    document.getElementById('calendarPopup').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeCalendar();
-      }
-    });
-  </script>
-
+  <!-- Load External Scripts -->
   <script src="script.js"></script>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 </body>
 </html>
